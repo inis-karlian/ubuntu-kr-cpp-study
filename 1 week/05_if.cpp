@@ -3,39 +3,40 @@
 using namespace std;
 
 int main() {
-    int score = 0;
+  
+  int score = 0;
 
-    cout << "enter your score : ";
-    cin >> score;
+  cout << "enter your score : ";
+  cin >> score;
 
-    cout << endl;
-    // (A:100-80, B:79-60, C:59-40, E:39-0)
-    if(score <= 100 && score >= 0){
-        
-        if(score >= 80){
+  cout << endl;
+  // (A:100-80, B:79-60, C:59-40, E:39-0)
+  if(score <= 100 && score >= 0){
+      
+    if(score >= 80){
 
-            cout << 'A' << endl;
+      cout << 'A' << endl;
 
-        }else if(score >= 60){
+    }else if(score >= 60){
 
-            cout << 'B' << endl;
+      cout << 'B' << endl;
 
-        }else if(score >= 40){
+    }else if(score >= 40){
 
-            cout << 'C' << endl;
-
-        }else{
-
-            cout << 'E' << endl;
-
-        }
+      cout << 'C' << endl;
 
     }else{
-        
-        cout << "error" << endl;
-        return 0;
 
-    }        
+      cout << 'E' << endl;
 
+    }
+
+  }else{
+    
+    cout << "error" << endl;
     return 0;
+
+  }        
+
+  return 0;
 }
