@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    array<int, 10> arr = {1, 2, 3, 4, 5};
+/*    array<int, 10> arr = {1, 2, 3, 4, 5};
 
     auto it = arr.begin();
 
@@ -12,6 +12,6 @@ int main() {
         cout << *it << endl;
         it++;
     }
-
+*/
     return 0;
 }
