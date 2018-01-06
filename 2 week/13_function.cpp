@@ -6,7 +6,7 @@ using namespace std;
 
 int fac(int n) {
     
-    int i = 0 ;
+	int i = 0 ;
 	int result = 1;
 
 	// n부터 1까지 반복
@@ -21,10 +21,10 @@ int fac(int n) {
 
 
 int main() {
-    int num = 0, in_num = 5;
+	int num = 0, in_num = 5;
 
-    num = fac(in_num);
+	num = fac(in_num);
 
-    cout << num << endl; 
-    return 0;
+	cout << num << endl; 
+	return 0;
 }

@@ -3,13 +3,13 @@
 using namespace std;
 
 int main() {
-    int myscore = 1000;
+  int myscore = 1000;
 
-    int **number;
+  int **number;
 
-    *number = &myscore;
+  *number = &myscore;
 
 
-    cout << **number << endl;
-    return 0;
+  cout << **number << endl;
+  return 0;
 }

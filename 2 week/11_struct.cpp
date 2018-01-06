@@ -6,30 +6,30 @@ using namespace std;
 #define size 64
 struct make_item
 {
-    char name[size];
-    char country[size];
-    int price;
-    char os[size];
+  char name[size];
+  char country[size];
+  int price;
+  char os[size];
 };
 
 int main() {
-    
-    int country_n = 0;
-    make_item item;
-    
-    strcpy(item.name, "good-laptop");
 
-    cout << "enter your country : ";
-    cin >> item.country;
+  int country_n = 0;
+  make_item item;
 
-    strcat(item.name, item.country);
+  strcpy(item.name, "good-laptop");
 
-    item.price = 700000;
+  cout << "enter your country : ";
+  cin >> item.country;
 
-   
-    cout << "name : " <<"-"<< item.name << endl;
-    cout << "price : " << item.price << endl;
-    cout << "os : "<< endl; // os pre-install = en, os none = ko
+  strcat(item.name, item.country);
 
-    return 0;
+  item.price = 700000;
+
+
+  cout << "name : " <<"-"<< item.name << endl;
+  cout << "price : " << item.price << endl;
+  cout << "os : "<< endl; // os pre-install = en, os none = ko
+
+  return 0;
 }
