@@ -21,7 +21,7 @@ int main(){
 
   cout << "ARRAY NUMBER" << endl;
 
-  for(int i=0;i<ARRAY_NUMBER;i++){      
+  for(int i=0;i<ARRAY_NUMBER;i++){        // 난수 배열 생성  
     rand_value = rand() % 100 + 1;
     arr[i] = rand_value;
     cout << rand_value <<' ';
