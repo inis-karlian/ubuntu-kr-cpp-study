@@ -4,20 +4,16 @@
 
 using namespace std;
 
-int fac(int n) {
-    
-	int i = 0 ;
+int fac(int num) {
+	
 	int result = 1;
 
-	// n부터 1까지 반복
-	for(i = n; i > 0; i--)
-	{
-		// i값을 계속 곱해서 result에 대입
-		result *= i;
+	for(int i = num; i > 0; i--){
+		result = result * i;
 	}
 
 	return result;
-}   //http://www.jynote.net/455
+}
 
 
 int main() {
@@ -27,4 +23,5 @@ int main() {
 
 	cout << num << endl; 
 	return 0;
+
 }
