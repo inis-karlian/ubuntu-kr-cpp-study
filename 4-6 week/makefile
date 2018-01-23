@@ -11,6 +11,7 @@ TARGET = final_proj
 
 all : $(TARGET)
 	$(CXX) -o $(TARGET) $(OBJS) $(INC) $(LIBS)
+	rm -f *.o
 
 $(TARGET) :
 	$(CXX) -c $(SRCS) $(INC) $(LIBS)
@@ -19,5 +20,5 @@ clean :
 	rm -f $(TARGET)
 	rm -f *.o
 
-clear :
-	rm -f *.o
+#clear :
+#	rm -f *.o
