@@ -16,6 +16,6 @@ $(TARGET) :
 	$(CXX) -c $(SRCS) $(INC) $(LIBS)
 
 clean :
-#	rm -f $(TARGET)
+	rm -f $(TARGET)
 	rm -f *.o
 

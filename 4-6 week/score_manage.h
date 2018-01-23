@@ -1,3 +1,16 @@
+/*
+*  struct sutuent
+*
+*  void display();                                                   // 출력
+*  void create(int new_student_num, string new_name, int new_score); // 입력 (학번, 이름, 점수)
+*  void retouch(int list_num);                                       // 수정 (링크드리스트 순서)
+*  void del_all();                                                   // 삭제 -> 부분삭제 추가
+*
+*
+*
+*/
+
+
 #include <string>
 #include <iostream>
 
@@ -15,6 +28,7 @@ struct sutuent
 class list {
   private:
     sutuent *head, *tail;
+    char make_rank(int score);
 
   public:
     list() {
@@ -22,7 +36,8 @@ class list {
       tail = NULL;
     }
 
-  void display();
-  void create(string new_name, int new_student_num, int new_score);
-  void del_all();
+    void display();
+    void create(int new_student_num, string new_name, int new_score); //  학번, 이름, 점수
+    void retouch(int list_num);
+    void del_all();
 };
