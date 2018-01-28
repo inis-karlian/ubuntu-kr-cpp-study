@@ -13,6 +13,9 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
+#include <vector>
+
 
 using namespace std;
 
@@ -22,22 +25,22 @@ struct sutuent
   int student_num;  // 학번
   int score;        // 점수
   char score_rank;  // 학점
-  sutuent *next;
 };
 
 class list {
   private:
-    sutuent *head, *tail;
+
     char make_rank(int score);
+    vector<sutuent> slist;
 
   public:
-    list() {
-      head = NULL;
-      tail = NULL;
-    }
 
     void display();
     void create(int new_student_num, string new_name, int new_score); //  학번, 이름, 점수
     void retouch(int list_num);
+    void search();
+    void list_sort();
+    void del(int list_num);
     void del_all();
+   
 };
