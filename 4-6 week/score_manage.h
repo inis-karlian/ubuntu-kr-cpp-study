@@ -15,6 +15,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <stdio.h>
+#include <fstream>
 
 
 using namespace std;
@@ -34,9 +36,15 @@ class list {
     vector<sutuent> slist;
 
   public:
-
+    void printType();
     void display();
+    void fileDisplay();
+
+    void createType();
+    void inputCreate();
     void create(int new_student_num, string new_name, int new_score); //  학번, 이름, 점수
+    void fileCreate();
+
     void retouch(int list_num);
     void search();
     void list_sort();

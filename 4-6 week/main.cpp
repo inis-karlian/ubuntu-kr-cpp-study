@@ -11,9 +11,6 @@ int main() {
   char choose = 'c';
   list student_list;
 
-  string name;
-  int student_num; 
-  int score;   
   int list_num;     
 
 
@@ -33,13 +30,10 @@ int main() {
 
     switch(choose){
       case '1': 
-        cout << "학번 : ";  cin >> student_num;
-        cout << "이름 : ";  cin >> name;
-        cout << "점수 : ";  cin >> score;  cout << endl; 
-        student_list.create(student_num, name, score);
+        student_list.createType();
         break;
       case '2':
-        student_list.display();
+        student_list.printType();
         break;
       case '3':
         cout << "수정할 학생의 리스트 번호를 입력하세요 : ";  cin >> list_num;

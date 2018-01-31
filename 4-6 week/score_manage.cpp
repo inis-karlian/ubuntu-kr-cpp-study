@@ -32,10 +32,26 @@ char list::make_rank(int score){
   return rank;
 }
 
+void list::printType(){
+  char chose = 0;
+
+  cout << "출력 타입 선택 (0 : 파일/ 그외 : Display) : ";  
+  cin >> chose;  
+  cout << endl; 
+
+  if(chose == '0'){
+    fileDisplay();
+  }else{
+    display();
+  }
+
+}
+
+
+
 void list::display() {
 
   int list_num = 0;
-  int end;
   vector<sutuent>::iterator num;
 
   cout <<"|"<< "번호" << "\t|"<< "학번" << "\t|" << "이름" << "\t|" << "점수" << "\t|" << "학점" << "\t|" << endl;
@@ -46,6 +62,52 @@ void list::display() {
 
 }
 
+
+void list::fileDisplay(){
+
+  ofstream file("Student_list.txt");
+
+  int list_num = 0;
+  vector<sutuent>::iterator num;
+
+  file <<"|"<< "번호" << "\t|"<< "학번" << "\t|" << "이름" << "\t|" << "점수" << "\t|" << "학점" << "\t|" << endl;
+  
+  for(num = slist.begin(); num < slist.end(); num++, list_num++){
+    file << "|"<< list_num << "\t|"<< slist[list_num].student_num << "\t|" << slist[list_num].name << "\t|" << slist[list_num].score << "\t|" << slist[list_num].score_rank << "\t|" << endl; 
+  }
+
+  file.close();
+}
+
+
+void list::createType(){
+ char chose = 0;
+
+  cout << "입력 타입 선택 (0 : 파일/ 그외 : Display) : ";  
+  cin >> chose;  
+  cout << endl; 
+
+  if(chose == '0'){
+    fileCreate();
+  }else{
+
+    inputCreate();
+  }
+
+}
+
+void list::inputCreate(){
+  int student_num, score;
+  string name;
+
+  cout << "학번 : ";  cin >> student_num;
+  cout << "이름 : ";  cin >> name;
+  cout << "점수 : ";  cin >> score;  cout << endl; 
+  
+  create(student_num, name, score);
+}
+
+
 void list::create(int new_student_num, string new_name, int new_score) {
 
   sutuent temp;
@@ -55,6 +117,24 @@ void list::create(int new_student_num, string new_name, int new_score) {
   temp.score_rank = make_rank(new_score);   
 
   slist.push_back(temp);
+}
+
+void list::fileCreate(){
+  char readstring[100]={0,};
+
+  ifstream file("sample_list.txt", ios::in);
+
+  while(!file.eof()){
+
+    file.getline(readstring, 100);
+
+    cout << readstring << endl;           //  각 문자열 분할 후 입력 하도록 제작
+                                          //  create(student_num, name, score);
+  }
+
+
+
+  file.close();
 }
 
 
@@ -131,7 +211,7 @@ void list::list_sort(){
 
 
 void list::search(){
-
+  // 검색 시스템 제작
 }
 
 
