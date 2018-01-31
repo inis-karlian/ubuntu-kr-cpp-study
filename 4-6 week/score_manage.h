@@ -17,6 +17,7 @@
 #include <vector>
 #include <stdio.h>
 #include <fstream>
+#include <string.h>
 
 
 using namespace std;

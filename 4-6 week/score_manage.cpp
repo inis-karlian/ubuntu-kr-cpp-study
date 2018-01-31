@@ -120,19 +120,50 @@ void list::create(int new_student_num, string new_name, int new_score) {
 }
 
 void list::fileCreate(){
+
   char readstring[100]={0,};
+  char *token;
+  int student_num, score;
+  string name;
 
-  ifstream file("sample_list.txt", ios::in);
+  ifstream file("sample_list.txt", ios::in);  
 
-  while(!file.eof()){
+  file.getline(readstring, 100);        // 첫줄 버림 - 목록 메뉴
+
+  while( 0 == file.eof()){
 
     file.getline(readstring, 100);
+    //cout << readstring << endl;    
 
-    cout << readstring << endl;           //  각 문자열 분할 후 입력 하도록 제작
-                                          //  create(student_num, name, score);
-  }
+    token = strtok(readstring,"\t|");
 
+    if(token != NULL){                 // 아래 for -> while(token != NULL){ > error
+    
+      for(int i=0; i<4; i++){
 
+        token = strtok(NULL,"\t|");
+        
+        switch(i){
+          case 0:
+            student_num = atoi(token);
+            break;
+          case 1:
+            name = token;
+            break;
+          case 2:
+            score = atoi(token);
+            break;
+          case 3: // 학점(A~F)
+            break;
+          default:
+            break;
+        }
+      }
+      create(student_num, name, score);
+
+    }
+                      
+  } 
 
   file.close();
 }
